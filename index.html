@@ -143,82 +143,86 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🌐 我的网站导航</h1>
-            <p>精选网站聚合 - 快速访问我的各种项目</p>
+            <h1 id="page-title">🌐 我的网站导航</h1>
+            <p id="page-subtitle">精选网站聚合 - 快速访问我的各种项目</p>
         </div>
 
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-icon">🔥</div>
-                <div class="card-content">
-                    <div class="card-title">多网站热榜</div>
-                    <div class="card-description">
-                        聚合各大平台热门内容，一站式获取最新资讯和趋势，让您第一时间了解互联网动态。
-                    </div>
-                    <a href="https://leo4wind.github.io/UnifyInfo/" class="card-url" target="_blank">访问网站</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">📚</div>
-                <div class="card-content">
-                    <div class="card-title">小学数学计算认字百宝箱</div>
-                    <div class="card-description">
-                        专为小学生打造的数学学习和汉字认读工具，寓教于乐，让孩子在游戏中掌握知识。
-                    </div>
-                    <a href="https://leo4wind.github.io/MathStart1st/" class="card-url" target="_blank">访问网站</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">📅</div>
-                <div class="card-content">
-                    <div class="card-title">课程表</div>
-                    <div class="card-description">
-                        智能课程表管理工具，帮助学生轻松规划学习时间，直观展示课程安排，让学习更高效。
-                    </div>
-                    <a href="https://leo4wind.github.io/ClassMate4Kid/" class="card-url" target="_blank">访问网站</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">💻</div>
-                <div class="card-content">
-                    <div class="card-title">我的 GitHub 主页</div>
-                    <div class="card-description">
-                        探索我的开源项目集合，包含各种有趣的技术实现和学习笔记，与开发者社区分享交流。
-                    </div>
-                    <a href="https://github.com/leo4wind" class="card-url" target="_blank">访问网站</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🗄️</div>
-                <div class="card-content">
-                    <div class="card-title">日志转 SQL</div>
-                    <div class="card-description">
-                        实用的日志解析工具，快速将各种格式的日志文件转换为 SQL 语句，简化数据导入流程。
-                    </div>
-                    <a href="https://leo4wind.github.io/log2sql/" class="card-url" target="_blank">访问网站</a>
-                </div>
-            </div>
-
-            <div class="card coming-soon">
-                <div class="card-icon">✍️</div>
-                <div class="card-content">
-                    <div class="card-title">我的博客</div>
-                    <div class="card-description">
-                        个人技术博客，分享编程经验、技术见解和生活感悟。即将上线，敬请期待！
-                    </div>
-                    <span class="card-url">即将上线</span>
-                </div>
-            </div>
+        <div class="card-grid" id="card-grid">
+            <!-- 卡片由 data.json 动态生成 -->
         </div>
 
         <div class="footer">
-            <p>© 2025 我的网站导航 | 用心打造每一个项目</p>
+            <p id="page-footer">© 2025 我的网站导航 | 用心打造每一个项目</p>
         </div>
     </div>
+
+    <script>
+        async function loadSites() {
+            try {
+                const res = await fetch('data.json');
+                const data = await res.json();
+
+                if (data.title) {
+                    document.getElementById('page-title').textContent = data.title;
+                }
+                if (data.subtitle) {
+                    document.getElementById('page-subtitle').textContent = data.subtitle;
+                }
+                if (data.footer) {
+                    document.getElementById('page-footer').textContent = data.footer;
+                }
+
+                const container = document.getElementById('card-grid');
+                container.innerHTML = '';
+
+                (data.sites || []).forEach(site => {
+                    const card = document.createElement('div');
+                    card.className = 'card' + (site.status === 'comingSoon' ? ' coming-soon' : '');
+
+                    const icon = document.createElement('div');
+                    icon.className = 'card-icon';
+                    icon.textContent = site.icon || '🌐';
+
+                    const content = document.createElement('div');
+                    content.className = 'card-content';
+
+                    const title = document.createElement('div');
+                    title.className = 'card-title';
+                    title.textContent = site.name || '';
+
+                    const desc = document.createElement('div');
+                    desc.className = 'card-description';
+                    desc.textContent = site.description || '';
+
+                    content.appendChild(title);
+                    content.appendChild(desc);
+
+                    if (site.status === 'comingSoon' || !site.url) {
+                        const span = document.createElement('span');
+                        span.className = 'card-url';
+                        span.textContent = '即将上线';
+                        content.appendChild(span);
+                    } else {
+                        const link = document.createElement('a');
+                        link.className = 'card-url';
+                        link.href = site.url;
+                        link.target = '_blank';
+                        link.rel = 'noopener noreferrer';
+                        link.textContent = '访问网站';
+                        content.appendChild(link);
+                    }
+
+                    card.appendChild(icon);
+                    card.appendChild(content);
+                    container.appendChild(card);
+                });
+            } catch (e) {
+                console.error('加载 data.json 失败：', e);
+            }
+        }
+
+        loadSites();
+    </script>
 </body>
 
 </html>

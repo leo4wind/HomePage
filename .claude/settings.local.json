@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chcp 65001)",
+      "Bash(git init)",
+      "Bash(git add index.html data.json)",
+      "Bash(git commit -m \"feat: 创建多网站聚合首页\n\n- 包含6个网站的导航页面\n- 响应式设计，支持移动端\n- 现代化UI设计，渐变背景和卡片布局\n- 为即将上线的博客添加特殊标识\")",
+      "Bash(git remote add origin https://github.com/leo4wind/HomePage.git)",
+      "Bash(git push -u origin master)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

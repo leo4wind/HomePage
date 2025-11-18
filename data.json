@@ -1,26 +1,63 @@
-[
-    {
-        "name": "多网站热榜",
-        "url": "https://leo4wind.github.io/UnifyInfo/"
-    },
-    {
-        "name": "小学数学计算认字百宝箱",
-        "url": "https://leo4wind.github.io/MathStart1st/"
-    },
-    {
-        "name": "课程表",
-        "url": "https://leo4wind.github.io/ClassMate4Kid/"
-    },
-    {
-        "name": "我的github主页",
-        "url": "https://github.com/leo4wind"
-    },
-    {
-        "name": "日志转sql",
-        "url": "https://leo4wind.github.io/log2sql/"
-    },
-    {
-        "name": "my博客",
-        "url": "以后补充"
-    }
-]
+{
+    "title": "🌐 我的网站导航",
+    "subtitle": "精选网站聚合 - 快速访问我的各种项目",
+    "footer": "© 2025 我的网站导航 | 用心打造每一个项目",
+    "sites": [
+        {
+            "icon": "🔥",
+            "name": "多网站热榜",
+            "description": "聚合各大平台热门内容，一站式获取最新资讯和趋势，让您第一时间了解互联网动态。",
+            "url": "https://leo4wind.github.io/UnifyInfo/",
+            "status": "online"
+        },
+        {
+            "icon": "📚",
+            "name": "小学数学计算认字百宝箱",
+            "description": "专为小学生打造的数学学习和汉字认读工具，寓教于乐，让孩子在游戏中掌握知识。",
+            "url": "https://leo4wind.github.io/MathStart1st/",
+            "status": "online"
+        },
+        {
+            "icon": "📅",
+            "name": "课程表",
+            "description": "智能课程表管理工具，帮助学生轻松规划学习时间，直观展示课程安排，让学习更高效。",
+            "url": "https://leo4wind.github.io/ClassMate4Kid/",
+            "status": "online"
+        },
+        {
+            "icon": "💻",
+            "name": "我的 GitHub 主页",
+            "description": "探索我的开源项目集合，包含各种有趣的技术实现和学习笔记，与开发者社区分享交流。",
+            "url": "https://github.com/leo4wind",
+            "status": "online"
+        },
+        {
+            "icon": "🗄️",
+            "name": "日志转 SQL",
+            "description": "实用的日志解析工具，快速将各种格式的日志文件转换为 SQL 语句，简化数据导入流程。",
+            "url": "https://leo4wind.github.io/log2sql/",
+            "status": "online"
+        },
+        {
+            "icon": "❤️",
+            "name": "HealthCareKid",
+            "description": "面向儿童的健康与生活管理相关工具或应用入口，便于家长和孩子关注日常健康。",
+            "url": "https://leo4wind.github.io/healthCareKid/",
+            "status": "online"
+        },
+        {
+            "icon": "🔐",
+            "name": "Encrypt Site",
+            "description": "在线加密相关的小工具站点，用于简单加密、解密或安全相关操作。",
+            "url": "https://leo4wind.github.io/encrpt-site/",
+            "status": "online"
+        },
+        {
+            "icon": "✍️",
+            "name": "我的博客",
+            "description": "个人技术博客，分享编程经验、技术见解和生活感悟。即将上线，敬请期待。",
+            "url": "",
+            "status": "comingSoon"
+        }
+    ]
+}
