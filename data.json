@@ -53,6 +53,13 @@
             "status": "online"
         },
         {
+            "icon": "✏️",
+            "name": "汉字笔画学习",
+            "description": "交互式汉字笔画学习网站，支持笔顺动画演示与测验模式，帮助孩子规范书写汉字。",
+            "url": "https://leo4wind.github.io/HanziPedia/",
+            "status": "online"
+        },
+        {
             "icon": "✍️",
             "name": "我的博客",
             "description": "个人技术博客，分享编程经验、技术见解和生活感悟。即将上线，敬请期待。",
