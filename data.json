@@ -10,6 +10,13 @@
             "url": "https://leo4wind.github.io/UnifyInfo/",
             "status": "online"
         },
+         {
+            "icon": "🌳",
+            "name": "小游戏",
+            "description": "聚合小游戏。一键畅玩",
+            "url": "https://leo4wind.github.io/little-game/",
+            "status": "online"
+        },
         {
             "icon": "📚",
             "name": "小学数学计算认字百宝箱",
